@@ -28,15 +28,16 @@ puts player_upgrade
 
 
 
-# I think the error is b/c the .merge method on player passes the character_classes has with the
-# user's input as the key, but that will be a string, whereas the keys in character_classes are all
-# symbols. So, you have to convert the input variable to a symbol with .to_sym.
+# I think the error is b/c the .merge method on player is passed the character_classes hash with the
+# user's input as the key, but the input will be a string, whereas the keys in character_classes are all
+# symbols. So, you have to convert the 'input' variable to a symbol with .to_sym.
 
 
-# The other problem is that player.merge... returns the new array where a stat is upgraded, but .merge does not
-# mutate the caller. So what we really want to do is create a new variable to hold that upgrade (right? b/c I don't
-# think we want to actually mutate player b/c we need that to hold the default stats).
+# The other problem is that the "player.merge..." method call returns the new array (where one of the stats is upgraded),
+# but .merge does not mutate the caller (without the ! on the end).
+# So what we really want to do is create a new variable to store that upgraded stat with the others
+# (right? b/c I don't think we want to actually mutate player b/c we need that to hold the default stats ??).
 
 
 
-# YEP YEP! CORRECT!  Nice job figuring all that out! WOOT!
+# YEP YEP! CORRECT!  Nice job!
